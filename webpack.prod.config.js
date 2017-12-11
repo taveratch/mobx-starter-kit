@@ -33,7 +33,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js|jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
@@ -53,7 +53,7 @@ module.exports = {
     ]
   },
   resolve: {
-    root: path.resolve('.'),
-    extensions: ['', '.js', '.jsx']
+    modules: [path.resolve('src'), 'node_modules'],
+    extensions: ['.js', '.jsx']
   }
 }

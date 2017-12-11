@@ -17,18 +17,14 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin()
   ],
 
   module: {
-    preLoaders: [
-      // Javascript
-      { test: /\.js|jsx?$/, loader: 'eslint', exclude: /node_modules/ }
-    ],
     loaders: [
       {
         test: /\.js|jsx?$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           plugins: ['transform-decorators-legacy']
         },
@@ -51,7 +47,7 @@ module.exports = {
     ]
   },
   resolve: {
-    root: path.resolve('.'),
-    extensions: ['', '.js', '.jsx']
+    modules: [path.resolve('src'), 'node_modules'],
+    extensions: ['.js', '.jsx']
   }
 }

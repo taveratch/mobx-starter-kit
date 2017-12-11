@@ -1,30 +1,31 @@
+import { inject, observer } from 'mobx-react'
+
 import React from 'react'
-import { observer } from 'mobx-react'
-import stores from 'stores'
 import styled from 'styled-components'
 
 const BlueText = styled.h1`
   color: blue;
 `
 
+@inject('stores')
 @observer
 class App extends React.Component {
 
   increase = () => {
-    stores.counter.increase()
+    this.props.stores.counter.increase()
   }
-  
+
   decrease = () => {
-    stores.counter.decrease()
+    this.props.stores.counter.decrease()
   }
-  
+
   render() {
     return (
       <div>
         <BlueText>Counter game wih mobx</BlueText>
         <div>
           <button onClick={this.decrease}>-</button>
-          <span>{stores.counter.number}</span>
+          <span>{this.props.stores.counter.number}</span>
           <button onClick={this.increase}>+</button>
         </div>
       </div>

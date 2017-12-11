@@ -1,4 +1,4 @@
-import Counter from 'src/stores/counter'
+import Counter from 'stores/counter'
 
 const stores = {}
 
