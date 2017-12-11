@@ -37,7 +37,7 @@ if (!production) {
 app.use('/public', publicPath)
 app.use('/stylesheet', express.static(path.join(__dirname, '../stylesheet')))
 app.use('/proxy', proxy)
-app.use('/', function (_, res) { res.sendFile(indexPath) })
+app.use('*', function (_, res) { res.sendFile(indexPath) })
 
 app.listen(port)
 
