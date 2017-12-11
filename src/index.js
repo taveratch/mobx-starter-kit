@@ -1,6 +1,11 @@
-import App from 'components/app'
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Routes from 'routes/index.js'
-import { render } from 'react-dom'
 
-render(<Routes/>, document.getElementById('main'))
+const render = (Component) => {
+  ReactDOM.render(
+    <Component />,
+    document.getElementById('main'))
+}
+
+render(Routes)

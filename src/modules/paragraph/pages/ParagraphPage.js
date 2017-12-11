@@ -1,10 +1,10 @@
 import React from 'react'
 
-class FeaturePage extends React.PureComponent {
+class ParagraphPage extends React.Component {
   render() {
     return (
-      <div className="container">
-        <h3>Feature</h3>
+      <div className="container mt-3 mb-3">
+        <h3>Paragraph</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In finibus dolor a lectus ullamcorper dignissim eu eu enim. Etiam tristique consequat metus, in hendrerit eros varius sit amet. Sed sed hendrerit metus. Cras nibh arcu, suscipit a ornare eget, scelerisque aliquam nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed risus sem, auctor in mollis quis, elementum a est. Sed consectetur sagittis neque, at efficitur elit aliquam id. Nam ultrices justo justo, at interdum arcu vestibulum in.
 
@@ -21,4 +21,4 @@ Proin rhoncus porta ante nec porttitor. Nulla dignissim, nisi auctor vehicula rh
   }
 }
 
-export default FeaturePage
+export default ParagraphPage

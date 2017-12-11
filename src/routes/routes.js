@@ -1,21 +1,23 @@
 import { Route, Router, Switch } from 'react-router-dom'
 
-import FeaturePage from 'modules/feature/pages/FeaturePage'
-import HomePage from 'modules/home/pages/HomePage'
 import NavigationBar from 'common/components/NavigationBar'
 import React from 'react'
 import history from 'common/history'
+import routes from 'routes/routes-config'
 
-class Routes extends React.PureComponent {
+class Routes extends React.Component {
   render() {
     return (
       <div>
-        <NavigationBar />
         <Router history={history}>
-          <Switch>
-            <Route path='/home' component={HomePage}/>
-            <Route path='/features' component={FeaturePage}/>
-          </Switch>
+          <div>
+            <NavigationBar />
+            <Switch>
+              {
+                routes.map((item, i) => <Route key={i} path={item.path} component={item.component} />)
+              }
+            </Switch>
+          </div>
         </Router>
       </div>
     )

@@ -24,9 +24,9 @@ class App extends React.Component {
       <div>
         <BlueText>Counter game wih mobx</BlueText>
         <div>
-          <button onClick={this.decrease}>-</button>
+          <button className="btn btn-default" onClick={this.decrease}>-</button>
           <span>{this.props.stores.counter.number}</span>
-          <button onClick={this.increase}>+</button>
+          <button className="btn btn-default" onClick={this.increase}>+</button>
         </div>
       </div>
     )

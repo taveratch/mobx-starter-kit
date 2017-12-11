@@ -43,7 +43,6 @@
         "react/jsx-uses-vars": [2],
         "react/display-name": [0, { "ignoreTranspilerName": 0 }],
         "react/prop-types": [0, { "ignore": 0 }],
-        "no-console":0,
-        "no-unused-vars": 0
+        "no-console":0
     }
 }

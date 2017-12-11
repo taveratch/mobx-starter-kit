@@ -5,6 +5,7 @@ module.exports = {
   devtool: 'eval',
 
   entry: [
+    // 'react-hot-loader/patch',
     'webpack-hot-middleware/client',
     './src/index'
   ],
@@ -49,5 +50,8 @@ module.exports = {
   resolve: {
     modules: [path.resolve('src'), 'node_modules'],
     extensions: ['.js', '.jsx']
+  },
+  devServer: {
+    watchOptions: { aggregateTimeout: 300, poll: 1000 }
   }
 }
