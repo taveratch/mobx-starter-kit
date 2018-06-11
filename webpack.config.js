@@ -3,7 +3,6 @@ const webpack = require('webpack')
 
 module.exports = {
   devtool: 'eval',
-  mode: 'development',
 
   entry: [
     'webpack-hot-middleware/client',
@@ -11,9 +10,9 @@ module.exports = {
   ],
 
   output: {
-    path: path.join(__dirname, '/'),
+    path: path.join(__dirname, '/public'),
     filename: 'bundle.js',
-    publicPath: '/'
+    publicPath: '/public'
   },
 
   plugins: [
