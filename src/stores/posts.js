@@ -1,6 +1,6 @@
 import { action, observable } from 'mobx'
 
-import Api from 'common/Api'
+import Api from 'common/api'
 
 class Posts {
   @observable posts = []
