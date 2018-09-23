@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobx-starter-kit
+  labels:
+    app: mobx-starter-kit
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mobx-starter-kit
+  template:
+    metadata:
+      labels:
+        app: mobx-starter-kit
+    spec:
+      containers:
+      - name: mobx-starter-kit
+        image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit:release
+        ports:
+        - containerPort: 8080
+
+# apiVersion: v1
+# kind: ReplicationController
+# metadata:
+#   name: mobx-starter-kit-v2
+# spec:
+#   replicas: 2
+#   selector:
+#     app: mobx-starter-kit
+#     deployment: v2
+#   template:
+#     metadata:
+#       labels:
+#         app: mobx-starter-kit
+#         deployment: v2
+#     spec:
+#       containers:
+#       - name: mobx-starter-kit
+#         image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit:9f5a842100e31153e27dab4bf36e4a20c73729a3
+#         ports:
+#         - containerPort: 8080
