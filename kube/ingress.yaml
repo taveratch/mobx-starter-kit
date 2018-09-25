@@ -3,6 +3,7 @@ apiVersion: extensions/v1beta1
 metadata:
   name: ingress
   annotations:
+    kubernetes.io/ingress.allow-http: "false"
     kubernetes.io/ingress.class: "gce"
     kubernetes.io/tls-acme: "true"
 spec:
