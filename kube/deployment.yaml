@@ -16,27 +16,6 @@ spec:
     spec:
       containers:
       - name: mobx-starter-kit
-        image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit:release
+        image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit
         ports:
         - containerPort: 8080
-
-# apiVersion: v1
-# kind: ReplicationController
-# metadata:
-#   name: mobx-starter-kit-v2
-# spec:
-#   replicas: 2
-#   selector:
-#     app: mobx-starter-kit
-#     deployment: v2
-#   template:
-#     metadata:
-#       labels:
-#         app: mobx-starter-kit
-#         deployment: v2
-#     spec:
-#       containers:
-#       - name: mobx-starter-kit
-#         image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit:9f5a842100e31153e27dab4bf36e4a20c73729a3
-#         ports:
-#         - containerPort: 8080
