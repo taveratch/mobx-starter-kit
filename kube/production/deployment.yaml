@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: mobx-starter-kit
   name: mobx-starter-kit
   labels:
     app: mobx-starter-kit
@@ -19,4 +20,5 @@ spec:
         image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit
         ports:
         - containerPort: 8080
+        imagePullPolicy: Always
       restartPolicy: Always
