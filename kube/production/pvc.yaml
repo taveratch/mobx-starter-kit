@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: disk
-  namespace: mobx-starter-kit
+  namespace: mobx-starter-kit # Change this
 spec:
   accessModes:
     - ReadWriteOnce

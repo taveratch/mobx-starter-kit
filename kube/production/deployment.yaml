@@ -1,44 +1,44 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: mobx-starter-kit
-  name: mobx-starter-kit
+  namespace: mobx-starter-kit # Change this
+  name: mobx-starter-kit # Change this
   labels:
-    app: mobx-starter-kit
+    app: mobx-starter-kit # Change this
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mobx-starter-kit
+      app: mobx-starter-kit # Change this
   template:
     metadata:
       labels:
-        app: mobx-starter-kit
+        app: mobx-starter-kit # Change this
     spec:
       containers:
-      - name: mobx-starter-kit
-        image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit
+      - name: mobx-starter-kit # Change this
+        image: gcr.io/kubernetes-217215/github-taweesoft-mobx-starter-kit # Change this
         ports:
-        - containerPort: 8080
+        - containerPort: 8080 # Change this
         imagePullPolicy: Always
       restartPolicy: Always
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: mobx-starter-kit
-  name: filebrowser
+  namespace: mobx-starter-kit # Change this
+  name: filebrowser # Change this
   labels:
-    app: filebrowser
+    app: filebrowser # Change this
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: filebrowser
+      app: filebrowser # Change this
   template:
     metadata:
       labels:
-        app: filebrowser
+        app: filebrowser # Change this
     spec:
       containers:
       - name: filebrowser # Change this
