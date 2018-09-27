@@ -10,3 +10,16 @@ spec:
     protocol: TCP
   selector:
     app: mobx-starter-kit
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: filebrowser-service
+  namespace: mobx-starter-kit
+spec:
+  ports:
+  - port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: filebrowser

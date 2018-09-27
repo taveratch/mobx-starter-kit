@@ -22,3 +22,35 @@ spec:
         - containerPort: 8080
         imagePullPolicy: Always
       restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: mobx-starter-kit
+  name: filebrowser
+  labels:
+    app: filebrowser
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: filebrowser
+  template:
+    metadata:
+      labels:
+        app: filebrowser
+    spec:
+      containers:
+      - name: filebrowser # Change this
+        image: registry.hub.docker.com/filebrowser/filebrowser # Change this
+        ports:
+        - containerPort: 80 # Change this
+        volumeMounts:
+          - name: disk
+            mountPath: /srv
+        imagePullPolicy: Always
+      restartPolicy: Always
+      volumes:
+        - name: disk
+          persistentVolumeClaim:
+            claimName: disk
