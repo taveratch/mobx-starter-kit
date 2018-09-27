@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: mobx-starter-kit-service # Change this
+  name: filebrowser-service # Change this
   namespace: mobx-starter-kit # Change this
 spec:
   ports:
   - port: 80
-    targetPort: 8080 # Change this
+    targetPort: 80 # Change this
     protocol: TCP
   selector:
-    app: mobx-starter-kit # Change this
+    app: filebrowser # Change this

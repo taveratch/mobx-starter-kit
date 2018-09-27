@@ -1,7 +1,7 @@
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  name: ingress
+  name: filebrowser-ingress
   namespace: mobx-starter-kit # Change this
   annotations:
     kubernetes.io/tls-acme: "true"
@@ -11,19 +11,9 @@ metadata:
 spec:
   tls:
     - hosts:
-      - mobx.taweesoft.space # [TODO] Change this to your host
-      secretName: mobx-taweesoft-space-tls # [TODO] Change this to YOUR_HOST-tls
-    - hosts:
       - filebrowser.taweesoft.space # [TODO] Change this to your host
       secretName: filebrowser-taweesoft-space-tls # [TODO] Change this to YOUR_HOST-tls
   rules:
-  - host: mobx.taweesoft.space # [TODO] Change this to your host
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: mobx-starter-kit-service
-          servicePort: 80
   - host: filebrowser.taweesoft.space # [TODO] Change this to your host
     http:
       paths:
