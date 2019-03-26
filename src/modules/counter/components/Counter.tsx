@@ -7,9 +7,14 @@ const BlueText = styled.h1`
   color: blue;
 `
 
+type Props = {
+  stores?: any
+}
+
+
 @inject('stores')
 @observer
-class App extends React.Component {
+class App extends React.Component<Props> {
 
   increase = () => {
     this.props.stores.counter.increase()

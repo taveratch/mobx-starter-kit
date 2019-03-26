@@ -1,22 +1,22 @@
 import qs from 'query-string'
 
 class ApiManager {
-  fetch(options) {
+  fetch(options: any) {
     let proxyPrefix = '/proxy?q='
-    if(typeof options.json === 'undefined')
+    if (typeof options.json === 'undefined')
       options.json = true
-      
+
     options.url = proxyPrefix + options.url
-    
+
     if (options.q)
       options.url += '&' + qs.stringify(options.q)
-    if(!options.headers)  
+    if (!options.headers)
       options.headers = {}
     options.headers['Content-Type'] = 'application/json'
 
     if (options.body)
       options.body = JSON.stringify(options.body)
-      
+
     return new Promise((resolve, reject) => {
       fetch(options.url, options)
         .then(res => {
@@ -27,9 +27,9 @@ class ApiManager {
         })
         .catch(error => {
           try {
-            error.json().then(err => reject(err))
+            error.json().then((err: any) => reject(err))
           } catch (err) {
-            error.text().then(err => reject(err))
+            error.text().then((err: any) => reject(err))
           }
         })
     })

@@ -1,5 +1,6 @@
-const path = require('path')
 const webpack = require('webpack')
+
+const path = require('path')
 
 module.exports = {
   devtool: 'eval',
@@ -32,6 +33,11 @@ module.exports = {
         exclude: path.join(__dirname, 'node_modules')
       },
       {
+        test: /\.ts|\.tsx$/,
+        use: 'awesome-typescript-loader',
+        include: __dirname
+      },
+      {
         test: /\.scss?$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles')
@@ -49,9 +55,12 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve('src'), 'node_modules'],
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
     watchOptions: { aggregateTimeout: 300, poll: 1000 }
   }
 }
+
+
+// export default config

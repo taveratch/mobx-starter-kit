@@ -48,7 +48,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve('src'), 'node_modules'],
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
     watchOptions: { aggregateTimeout: 300, poll: 1000 }

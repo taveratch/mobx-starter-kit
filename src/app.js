@@ -1,18 +1,19 @@
-import config from '../webpack.dev.config.js'
-import express from 'express'
-import nodeProxy from 'node-proxy-http'
-import path from 'path'
-import webpack from 'webpack'
-import webpackDevMiddleware from 'webpack-dev-middleware'
-import webpackHotMiddleware from 'webpack-hot-middleware'
+const config = require('../webpack.dev.config.js')
+const express = require('express')
+const nodeProxy = require('node-proxy-http')
+const path = require('path')
+const _ = require('lodash')
+const webpack = require('webpack')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
 
 const app = express()
 
-const { proxy } = nodeProxy()
-const port = (process.env.PORT || 8080)
+const { proxy } = nodeProxy.default()
+const port = (process.env.PORT || 8000)
 const production = process.env.NODE_ENV === 'production'
 
-let indexPath, publicPath
+let indexPath = '', publicPath
 
 if (!production) {
   const compiler = webpack(config)
@@ -21,8 +22,7 @@ if (!production) {
     heartbeat: 2000
   }))
   app.use(webpackDevMiddleware(compiler, {
-    noInfo: false,
-    publicPath: config.output.publicPath,
+    publicPath: _.get(config, 'output.publicPath'),
     stats: {
       colors: true
     }

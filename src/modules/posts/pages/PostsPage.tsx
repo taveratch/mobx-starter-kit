@@ -3,9 +3,13 @@ import { inject, observer } from 'mobx-react'
 import Card from 'common/components/Card'
 import React from 'react'
 
+type Props = {
+  stores: any
+}
+
 @inject('stores')
 @observer
-class PostsPage extends React.Component {
+class PostsPage extends React.Component<Props> {
 
   postsStore = this.props.stores.posts
 
@@ -17,7 +21,7 @@ class PostsPage extends React.Component {
     return (
       <div>
         {
-          this.postsStore.posts.map((post, i) => (
+          this.postsStore.posts.map((post: any, i: number) => (
             <div className="m-3" key={i} >
               <Card title={post.title} body={post.body} />
             </div>

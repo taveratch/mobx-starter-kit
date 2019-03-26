@@ -12,7 +12,7 @@ module.exports = {
     }
     app.use('/public', publicPath)
     app.use('/stylesheet', express.static(path.join(__dirname, '../stylesheet')))
-    app.get('*', function (_, res) { res.sendFile(indexPath) })
+    app.get('*', function (_: any, res: any) { res.sendFile(indexPath) })
 
     return app
   }

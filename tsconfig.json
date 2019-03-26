@@ -1,6 +1,93 @@
+// {
+//   "compilerOptions": {
+//     "module": "es2015",
+//     "target": "es2015",
+//     "jsx": "react",
+//     "rootDir": "./",
+//     "outDir": "build",
+//     "allowSyntheticDefaultImports": true,
+//     "noImplicitAny": true,
+//     "sourceMap": true,
+//     "experimentalDecorators": true,
+//     "preserveConstEnums": true,
+//     "allowJs": true,
+//     "noUnusedLocals": true,
+//     "noUnusedParameters": true,
+//     "noImplicitReturns": true,
+//     "skipLibCheck": true,
+//     "moduleResolution": "Node"
+//   },
+//   "filesGlob": [
+//     "typings/index.d.ts",
+//     "./**/*.ts",
+//     "./**/*.tsx",
+//     "node_modules/typescript/lib/lib.es6.d.ts"
+//   ],
+//   "types": [
+//     "react",
+//     "react-dom",
+//     "react-native"
+//   ],
+//   "exclude": [
+//     "public",
+//     "node_modules",
+//     "jest.config.js",
+//     "App.tsx"
+//   ],
+//   "compileOnSave": false
+// }
 {
-    "compilerOptions": {
-        "experimentalDecorators": true,
-        "allowJs": true
-    }
+  "compilerOptions": {
+    "jsx": "react",
+    "baseUrl": "./src",
+    "rootDir": "./",
+    // Target latest version of ECMAScript.
+    "target": "esnext",
+    // Search under node_modules for non-relative imports.
+    "moduleResolution": "node",
+    // Process & infer types from .js files.
+    "allowJs": true,
+    // Don't emit; allow Babel to transform files.
+    "noEmit": true,
+    // Enable strictest settings like strictNullChecks & noImplicitAny.
+    "strict": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": false,
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "preserveConstEnums": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "skipLibCheck": true,
+  },
+  "include": [
+    "./src",
+    "./src/ts/**/*",
+    "./**/*.ts",
+    "./**/*.d.ts",
+    "webpack.dev.config.js"
+  ],
+  "filesGlob": [
+    "typings/index.d.ts",
+    "./**/*.ts",
+    "./**/*.tsx",
+    "node_modules/typescript/lib/lib.es6.d.ts"
+  ],
+  "types": [
+    "react",
+    "react-dom",
+    "react-native"
+  ],
+  "exclude": [
+    "build",
+    "node_modules",
+    "jest.config.js",
+    "App.tsx"
+  ],
+  "compileOnSave": false
 }

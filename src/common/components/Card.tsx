@@ -1,6 +1,12 @@
 import React from 'react'
 
-export default props => (
+type Props = {
+  title: string,
+  subtitle?: string,
+  body: string
+}
+
+export default (props: Props) => (
   <div className="card">
     <div className="card-block">
       <h4 className="card-title">{props.title}</h4>

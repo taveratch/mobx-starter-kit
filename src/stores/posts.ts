@@ -3,12 +3,12 @@ import { action, observable } from 'mobx'
 import Api from 'common/api'
 
 class Posts {
-  @observable posts = []
+  @observable posts: any[] = []
 
   @action.bound
   fetchPosts() {
     Api.getPosts()
-      .then(posts => this.posts = posts)
+      .then((posts: any) => this.posts = posts)
   }
 }
 
