@@ -31,6 +31,11 @@ module.exports = {
         exclude: path.join(__dirname, 'node_modules')
       },
       {
+        test: /\.ts|\.tsx$/,
+        use: 'awesome-typescript-loader',
+        include: __dirname
+      },
+      {
         test: /\.scss?$/,
         loader: 'style!css!sass',
         include: path.join(__dirname, 'src', 'styles')

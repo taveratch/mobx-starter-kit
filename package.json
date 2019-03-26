@@ -6,7 +6,7 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --mode production",
     "babel-node": "babel-node",
-    "start": "NODE_ENV=production ./node_modules/.bin/babel -- ./src/app.js",
+    "start": "NODE_ENV=production babel-node -- ./src/app.js",
     "dev": "babel-node ./src/app.js",
     "build-start": "NODE_PATH=. npm run build && npm run start",
     "check-types": "tsc"
