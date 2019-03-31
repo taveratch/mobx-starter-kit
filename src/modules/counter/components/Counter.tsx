@@ -1,18 +1,17 @@
-import { inject, observer } from 'mobx-react'
+import { observer } from 'mobx-react'
 
 import React from 'react'
 import styled from 'styled-components'
+import RootStore from 'stores';
 
 const BlueText = styled.h1`
   color: blue;
 `
 
 type Props = {
-  stores?: any
+  stores: RootStore
 }
 
-
-@inject('stores')
 @observer
 class App extends React.Component<Props> {
 

@@ -1,6 +1,6 @@
 import { action, computed, observable } from 'mobx'
 
-class Counter {
+class CounterStore {
   @observable number = 0
 
   @action.bound
@@ -23,4 +23,4 @@ class Counter {
   }
 }
 
-export default Counter
+export default CounterStore

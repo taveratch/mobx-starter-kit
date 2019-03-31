@@ -2,9 +2,10 @@ import { inject, observer } from 'mobx-react'
 
 import Card from 'common/components/Card'
 import React from 'react'
+import RootStore from 'stores';
 
 type Props = {
-  stores: any
+  stores: RootStore
 }
 
 @inject('stores')
