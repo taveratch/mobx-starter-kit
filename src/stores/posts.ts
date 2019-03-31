@@ -2,7 +2,7 @@ import { action, observable } from 'mobx'
 
 import Api from 'common/api'
 
-class Posts {
+class PostStore {
   @observable posts: any[] = []
 
   @action.bound
@@ -12,4 +12,4 @@ class Posts {
   }
 }
 
-export default Posts
+export default PostStore

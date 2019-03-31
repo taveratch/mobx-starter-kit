@@ -1,9 +1,17 @@
-import Counter from 'stores/counter'
-import Posts from 'stores/posts'
+import UIStore from "./UIStore";
+import CounterStore from "./counter";
+import PostStore from "./posts";
 
-const stores: { counter: any, posts: any } = { counter: null, posts: null }
+class RootStore {
+  UIStore: UIStore
+  posts: PostStore
+  counter: CounterStore
 
-stores.counter = new Counter()
-stores.posts = new Posts()
+  constructor() {
+    this.UIStore = new UIStore(this)
+    this.posts = new PostStore()
+    this.counter = new CounterStore()
+  }
+}
 
-export default stores
+export default RootStore
